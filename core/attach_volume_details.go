@@ -24,9 +24,6 @@ type AttachVolumeDetails interface {
 
 	// A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
 	GetDisplayName() *string
-
-	// Whether the attachment was created in read-only mode.
-	GetIsReadOnly() *bool
 }
 
 type attachvolumedetails struct {
@@ -34,7 +31,6 @@ type attachvolumedetails struct {
 	InstanceId  *string `mandatory:"true" json:"instanceId"`
 	VolumeId    *string `mandatory:"true" json:"volumeId"`
 	DisplayName *string `mandatory:"false" json:"displayName"`
-	IsReadOnly  *bool   `mandatory:"false" json:"isReadOnly"`
 	Type        string  `json:"type"`
 }
 
@@ -52,7 +48,6 @@ func (m *attachvolumedetails) UnmarshalJSON(data []byte) error {
 	m.InstanceId = s.Model.InstanceId
 	m.VolumeId = s.Model.VolumeId
 	m.DisplayName = s.Model.DisplayName
-	m.IsReadOnly = s.Model.IsReadOnly
 	m.Type = s.Model.Type
 
 	return err
@@ -84,11 +79,6 @@ func (m attachvolumedetails) GetVolumeId() *string {
 //GetDisplayName returns DisplayName
 func (m attachvolumedetails) GetDisplayName() *string {
 	return m.DisplayName
-}
-
-//GetIsReadOnly returns IsReadOnly
-func (m attachvolumedetails) GetIsReadOnly() *bool {
-	return m.IsReadOnly
 }
 
 func (m attachvolumedetails) String() string {

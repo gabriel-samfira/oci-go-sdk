@@ -25,9 +25,6 @@ type ListImagesRequest struct {
 	// Example: `7.2`
 	OperatingSystemVersion *string `mandatory:"false" contributesTo:"query" name:"operatingSystemVersion"`
 
-	// Shape name.
-	Shape *string `mandatory:"false" contributesTo:"query" name:"shape"`
-
 	// The maximum number of items to return in a paginated "List" call.
 	// Example: `500`
 	Limit *int `mandatory:"false" contributesTo:"query" name:"limit"`

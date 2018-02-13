@@ -19,6 +19,7 @@ import (
 // major part of your organization. For more information, see
 // [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm) and also
 // [Setting Up Your Tenancy]({{DOC_SERVER_URL}}/Content/GSG/Concepts/settinguptenancy.htm).
+//
 // To place a resource in a compartment, simply specify the compartment ID in the "Create" request object when
 // initially creating the resource. For example, to launch an instance into a particular compartment, specify
 // that compartment's OCID in the `LaunchInstance` request. You can't move an existing resource from one
@@ -51,16 +52,6 @@ type Compartment struct {
 
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveStatus *int `mandatory:"false" json:"inactiveStatus"`
-
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
-	// Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `mandatory:"false" json:"freeformTags"`
-
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
-	// Example: `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 }
 
 func (m Compartment) String() string {

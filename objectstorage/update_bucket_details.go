@@ -3,7 +3,7 @@
 
 // Object Storage Service API
 //
-// Common set of Object and Archive Storage APIs for managing buckets and objects.
+// APIs for managing buckets and objects.
 //
 
 package objectstorage
@@ -20,20 +20,16 @@ type UpdateBucketDetails struct {
 	// The namespace in which the bucket lives.
 	Namespace *string `mandatory:"false" json:"namespace"`
 
-	// The compartmentId for the compartment to which the bucket is targeted to move to.
-	CompartmentId *string `mandatory:"false" json:"compartmentId"`
-
-	// The name of the bucket. Avoid entering confidential information.
-	// Example: my-new-bucket1
+	// The name of the bucket.
 	Name *string `mandatory:"false" json:"name"`
 
 	// Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
 	Metadata map[string]string `mandatory:"false" json:"metadata"`
 
-	// The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
-	// authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
-	// is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled
-	// on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
+	// The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+	// contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+	// when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+	// When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
 	PublicAccessType UpdateBucketDetailsPublicAccessTypeEnum `mandatory:"false" json:"publicAccessType,omitempty"`
 }
 
@@ -46,17 +42,15 @@ type UpdateBucketDetailsPublicAccessTypeEnum string
 
 // Set of constants representing the allowable values for UpdateBucketDetailsPublicAccessType
 const (
-	UpdateBucketDetailsPublicAccessTypeNopublicaccess        UpdateBucketDetailsPublicAccessTypeEnum = "NoPublicAccess"
-	UpdateBucketDetailsPublicAccessTypeObjectread            UpdateBucketDetailsPublicAccessTypeEnum = "ObjectRead"
-	UpdateBucketDetailsPublicAccessTypeObjectreadwithoutlist UpdateBucketDetailsPublicAccessTypeEnum = "ObjectReadWithoutList"
-	UpdateBucketDetailsPublicAccessTypeUnknown               UpdateBucketDetailsPublicAccessTypeEnum = "UNKNOWN"
+	UpdateBucketDetailsPublicAccessTypeNopublicaccess UpdateBucketDetailsPublicAccessTypeEnum = "NoPublicAccess"
+	UpdateBucketDetailsPublicAccessTypeObjectread     UpdateBucketDetailsPublicAccessTypeEnum = "ObjectRead"
+	UpdateBucketDetailsPublicAccessTypeUnknown        UpdateBucketDetailsPublicAccessTypeEnum = "UNKNOWN"
 )
 
 var mappingUpdateBucketDetailsPublicAccessType = map[string]UpdateBucketDetailsPublicAccessTypeEnum{
-	"NoPublicAccess":        UpdateBucketDetailsPublicAccessTypeNopublicaccess,
-	"ObjectRead":            UpdateBucketDetailsPublicAccessTypeObjectread,
-	"ObjectReadWithoutList": UpdateBucketDetailsPublicAccessTypeObjectreadwithoutlist,
-	"UNKNOWN":               UpdateBucketDetailsPublicAccessTypeUnknown,
+	"NoPublicAccess": UpdateBucketDetailsPublicAccessTypeNopublicaccess,
+	"ObjectRead":     UpdateBucketDetailsPublicAccessTypeObjectread,
+	"UNKNOWN":        UpdateBucketDetailsPublicAccessTypeUnknown,
 }
 
 // GetUpdateBucketDetailsPublicAccessTypeEnumValues Enumerates the set of values for UpdateBucketDetailsPublicAccessType

@@ -47,9 +47,6 @@ type VolumeAttachment interface {
 	// Avoid entering confidential information.
 	// Example: `My volume attachment`
 	GetDisplayName() *string
-
-	// Whether the attachment was created in read-only mode.
-	GetIsReadOnly() *bool
 }
 
 type volumeattachment struct {
@@ -62,7 +59,6 @@ type volumeattachment struct {
 	TimeCreated        *common.SDKTime                    `mandatory:"true" json:"timeCreated"`
 	VolumeId           *string                            `mandatory:"true" json:"volumeId"`
 	DisplayName        *string                            `mandatory:"false" json:"displayName"`
-	IsReadOnly         *bool                              `mandatory:"false" json:"isReadOnly"`
 	AttachmentType     string                             `json:"attachmentType"`
 }
 
@@ -85,7 +81,6 @@ func (m *volumeattachment) UnmarshalJSON(data []byte) error {
 	m.TimeCreated = s.Model.TimeCreated
 	m.VolumeId = s.Model.VolumeId
 	m.DisplayName = s.Model.DisplayName
-	m.IsReadOnly = s.Model.IsReadOnly
 	m.AttachmentType = s.Model.AttachmentType
 
 	return err
@@ -142,11 +137,6 @@ func (m volumeattachment) GetVolumeId() *string {
 //GetDisplayName returns DisplayName
 func (m volumeattachment) GetDisplayName() *string {
 	return m.DisplayName
-}
-
-//GetIsReadOnly returns IsReadOnly
-func (m volumeattachment) GetIsReadOnly() *bool {
-	return m.IsReadOnly
 }
 
 func (m volumeattachment) String() string {

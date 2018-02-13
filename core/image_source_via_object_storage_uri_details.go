@@ -18,19 +18,6 @@ type ImageSourceViaObjectStorageUriDetails struct {
 
 	// The Object Storage URL for the image.
 	SourceUri *string `mandatory:"true" json:"sourceUri"`
-
-	// The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
-	// images are supported.
-	SourceImageType *string `mandatory:"false" json:"sourceImageType"`
-
-	// The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
-	// images are supported.
-	SourceImageType ImageSourceDetailsSourceImageTypeEnum `mandatory:"" json:"sourceImageType,omitempty"`
-}
-
-//GetSourceImageType returns SourceImageType
-func (m ImageSourceViaObjectStorageUriDetails) GetSourceImageType() ImageSourceDetailsSourceImageTypeEnum {
-	return m.SourceImageType
 }
 
 func (m ImageSourceViaObjectStorageUriDetails) String() string {
