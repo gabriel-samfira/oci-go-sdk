@@ -23,9 +23,24 @@ type CreateVolumeDetails struct {
 	// The OCID of the compartment that contains the volume.
 	CompartmentId *string `mandatory:"true" json:"compartmentId"`
 
+	// If provided, specifies the ID of the volume backup policy to assign to the newly
+	// created volume. If omitted, no policy will be assigned.
+	BackupPolicyId *string `mandatory:"false" json:"backupPolicyId"`
+
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
+	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// Example: `{"Operations": {"CostCenter": "42"}}`
+	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
+
 	// A user-friendly name. Does not have to be unique, and it's changeable.
 	// Avoid entering confidential information.
 	DisplayName *string `mandatory:"false" json:"displayName"`
+
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no
+	// predefined name, type, or namespace. For more information, see
+	// [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `mandatory:"false" json:"freeformTags"`
 
 	// The size of the volume in GBs.
 	SizeInGBs *int `mandatory:"false" json:"sizeInGBs"`
@@ -52,20 +67,26 @@ func (m CreateVolumeDetails) String() string {
 // UnmarshalJSON unmarshals from json
 func (m *CreateVolumeDetails) UnmarshalJSON(data []byte) (e error) {
 	model := struct {
-		DisplayName        *string             `json:"displayName"`
-		SizeInGBs          *int                `json:"sizeInGBs"`
-		SizeInMBs          *int                `json:"sizeInMBs"`
-		SourceDetails      volumesourcedetails `json:"sourceDetails"`
-		VolumeBackupId     *string             `json:"volumeBackupId"`
-		AvailabilityDomain *string             `json:"availabilityDomain"`
-		CompartmentId      *string             `json:"compartmentId"`
+		BackupPolicyId     *string                           `json:"backupPolicyId"`
+		DefinedTags        map[string]map[string]interface{} `json:"definedTags"`
+		DisplayName        *string                           `json:"displayName"`
+		FreeformTags       map[string]string                 `json:"freeformTags"`
+		SizeInGBs          *int                              `json:"sizeInGBs"`
+		SizeInMBs          *int                              `json:"sizeInMBs"`
+		SourceDetails      volumesourcedetails               `json:"sourceDetails"`
+		VolumeBackupId     *string                           `json:"volumeBackupId"`
+		AvailabilityDomain *string                           `json:"availabilityDomain"`
+		CompartmentId      *string                           `json:"compartmentId"`
 	}{}
 
 	e = json.Unmarshal(data, &model)
 	if e != nil {
 		return
 	}
+	m.BackupPolicyId = model.BackupPolicyId
+	m.DefinedTags = model.DefinedTags
 	m.DisplayName = model.DisplayName
+	m.FreeformTags = model.FreeformTags
 	m.SizeInGBs = model.SizeInGBs
 	m.SizeInMBs = model.SizeInMBs
 	nn, e := model.SourceDetails.UnmarshalPolymorphicJSON(model.SourceDetails.JsonData)
