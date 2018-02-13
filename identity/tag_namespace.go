@@ -12,18 +12,29 @@ import (
 	"github.com/oracle/oci-go-sdk/common"
 )
 
-// CreateUserDetails The representation of CreateUserDetails
-type CreateUserDetails struct {
+// TagNamespace A managed container for defined tags. A tag namespace is unique in a tenancy. A tag namespace can't be deleted.
+// For more information, see [Managing Tags and Tag Namespaces]({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm).
+type TagNamespace struct {
 
-	// The OCID of the tenancy containing the user.
+	// The OCID of the tag namespace.
+	Id *string `mandatory:"true" json:"id"`
+
+	// The OCID of the compartment that contains the tag namespace.
 	CompartmentId *string `mandatory:"true" json:"compartmentId"`
 
-	// The name you assign to the user during creation. This is the user's login for the Console.
-	// The name must be unique across all users in the tenancy and cannot be changed.
+	// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 	Name *string `mandatory:"true" json:"name"`
 
-	// The description you assign to the user during creation. Does not have to be unique, and it's changeable.
+	// The description you assign to the tag namespace.
 	Description *string `mandatory:"true" json:"description"`
+
+	// Whether the tag namespace is retired.
+	// See [Retiring Key Definitions and Namespace Definitions]({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	IsRetired *bool `mandatory:"true" json:"isRetired"`
+
+	// Date and time the tagNamespace was created, in the format defined by RFC3339.
+	// Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated *common.SDKTime `mandatory:"true" json:"timeCreated"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
 	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
@@ -36,6 +47,6 @@ type CreateUserDetails struct {
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 }
 
-func (m CreateUserDetails) String() string {
+func (m TagNamespace) String() string {
 	return common.PointerString(m)
 }

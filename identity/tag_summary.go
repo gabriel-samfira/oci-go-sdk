@@ -12,21 +12,20 @@ import (
 	"github.com/oracle/oci-go-sdk/common"
 )
 
-// UpdatePolicyDetails The representation of UpdatePolicyDetails
-type UpdatePolicyDetails struct {
+// TagSummary A tag definition that belongs to a specific tag namespace.
+type TagSummary struct {
 
-	// The description you assign to the policy. Does not have to be unique, and it's changeable.
+	// The OCID of the compartment that contains the tag definition.
+	CompartmentId *string `mandatory:"false" json:"compartmentId"`
+
+	// The OCID of the tag definition.
+	Id *string `mandatory:"false" json:"id"`
+
+	// The name of the tag. The name must be unique across all tags in the tag namespace and can't be changed.
+	Name *string `mandatory:"false" json:"name"`
+
+	// The description you assign to the tag.
 	Description *string `mandatory:"false" json:"description"`
-
-	// An array of policy statements written in the policy language. See
-	// [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
-	// [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
-	Statements []string `mandatory:"false" json:"statements"`
-
-	// The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
-	// policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
-	// date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
-	VersionDate *common.SDKTime `mandatory:"false" json:"versionDate"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
 	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
@@ -37,8 +36,16 @@ type UpdatePolicyDetails struct {
 	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
+
+	// Whether the tag is retired.
+	// See [Retiring Key Definitions and Namespace Definitions]({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	IsRetired *bool `mandatory:"false" json:"isRetired"`
+
+	// Date and time the tag was created, in the format defined by RFC3339.
+	// Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated *common.SDKTime `mandatory:"false" json:"timeCreated"`
 }
 
-func (m UpdatePolicyDetails) String() string {
+func (m TagSummary) String() string {
 	return common.PointerString(m)
 }

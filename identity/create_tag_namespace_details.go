@@ -12,21 +12,17 @@ import (
 	"github.com/oracle/oci-go-sdk/common"
 )
 
-// UpdatePolicyDetails The representation of UpdatePolicyDetails
-type UpdatePolicyDetails struct {
+// CreateTagNamespaceDetails The representation of CreateTagNamespaceDetails
+type CreateTagNamespaceDetails struct {
 
-	// The description you assign to the policy. Does not have to be unique, and it's changeable.
-	Description *string `mandatory:"false" json:"description"`
+	// The OCID of the tenancy containing the tag namespace.
+	CompartmentId *string `mandatory:"true" json:"compartmentId"`
 
-	// An array of policy statements written in the policy language. See
-	// [How Policies Work]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policies.htm) and
-	// [Common Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/commonpolicies.htm).
-	Statements []string `mandatory:"false" json:"statements"`
+	// The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+	Name *string `mandatory:"true" json:"name"`
 
-	// The version of the policy. If null or set to an empty string, when a request comes in for authorization, the
-	// policy will be evaluated according to the current behavior of the services at that moment. If set to a particular
-	// date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
-	VersionDate *common.SDKTime `mandatory:"false" json:"versionDate"`
+	// The description you assign to the tag namespace during creation.
+	Description *string `mandatory:"true" json:"description"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
 	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
@@ -39,6 +35,6 @@ type UpdatePolicyDetails struct {
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 }
 
-func (m UpdatePolicyDetails) String() string {
+func (m CreateTagNamespaceDetails) String() string {
 	return common.PointerString(m)
 }

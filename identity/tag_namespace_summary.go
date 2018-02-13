@@ -12,10 +12,19 @@ import (
 	"github.com/oracle/oci-go-sdk/common"
 )
 
-// UpdateUserDetails The representation of UpdateUserDetails
-type UpdateUserDetails struct {
+// TagNamespaceSummary A container for defined tags.
+type TagNamespaceSummary struct {
 
-	// The description you assign to the user. Does not have to be unique, and it's changeable.
+	// The OCID of the tag namespace.
+	Id *string `mandatory:"false" json:"id"`
+
+	// The OCID of the compartment that contains the tag namespace.
+	CompartmentId *string `mandatory:"false" json:"compartmentId"`
+
+	// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+	Name *string `mandatory:"false" json:"name"`
+
+	// The description you assign to the tag namespace.
 	Description *string `mandatory:"false" json:"description"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -27,8 +36,16 @@ type UpdateUserDetails struct {
 	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
+
+	// Whether the tag namespace is retired.
+	// For more information, see [Retiring Key Definitions and Namespace Definitions]({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	IsRetired *bool `mandatory:"false" json:"isRetired"`
+
+	// Date and time the tagNamespace was created, in the format defined by RFC3339.
+	// Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated *common.SDKTime `mandatory:"false" json:"timeCreated"`
 }
 
-func (m UpdateUserDetails) String() string {
+func (m TagNamespaceSummary) String() string {
 	return common.PointerString(m)
 }
