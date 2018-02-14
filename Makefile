@@ -1,6 +1,6 @@
 DOC_SERVER_URL=http:\/\/lgl-bybliothece-01.virt.lgl.grungy.us
 
-GEN_TARGETS = identity core objectstorage loadbalancer database audit filestorage
+GEN_TARGETS = identity core objectstorage loadbalancer database audit filestorage dns
 NON_GEN_TARGETS = common common/auth
 TARGETS = $(NON_GEN_TARGETS) $(GEN_TARGETS)
 
