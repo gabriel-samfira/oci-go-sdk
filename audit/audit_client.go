@@ -3,8 +3,8 @@
 
 // Audit API
 //
-// API for the Audit Service. You can use this API for queries, but not bulk-export operations.
-//
+/* API for the Audit Service. You can use this API for queries, but not bulk-export operations.
+ */
 
 package audit
 

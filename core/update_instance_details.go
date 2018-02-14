@@ -3,8 +3,8 @@
 
 // Core Services API
 //
-// APIs for Networking Service, Compute Service, and Block Volume Service.
-//
+/* APIs for Networking Service, Compute Service, and Block Volume Service.
+ */
 
 package core
 

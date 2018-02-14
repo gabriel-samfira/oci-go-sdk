@@ -3,8 +3,8 @@
 
 // Load Balancing Service API
 //
-// API for the Load Balancing Service
-//
+/* API for the Load Balancing Service
+ */
 
 package loadbalancer
 

@@ -3,8 +3,8 @@
 
 // Database Service API
 //
-// The API for the Database Service.
-//
+/* The API for the Database Service.
+ */
 
 package database
 
