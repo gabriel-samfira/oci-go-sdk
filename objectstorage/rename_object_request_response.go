@@ -8,8 +8,8 @@ import (
 	"net/http"
 )
 
-// CreatePreauthenticatedRequestRequest wrapper for the CreatePreauthenticatedRequest operation
-type CreatePreauthenticatedRequestRequest struct {
+// RenameObjectRequest wrapper for the RenameObject operation
+type RenameObjectRequest struct {
 
 	// The top-level namespace used for the request.
 	NamespaceName *string `mandatory:"true" contributesTo:"path" name:"namespaceName"`
@@ -18,25 +18,22 @@ type CreatePreauthenticatedRequestRequest struct {
 	// Example: `my-new-bucket1`
 	BucketName *string `mandatory:"true" contributesTo:"path" name:"bucketName"`
 
-	// Information needed to create the pre-authenticated request.
-	CreatePreauthenticatedRequestDetails `contributesTo:"body"`
+	// The sourceName and newName of rename operation.
+	RenameObjectDetails `contributesTo:"body"`
 
 	// The client request ID for tracing.
 	OpcClientRequestId *string `mandatory:"false" contributesTo:"header" name:"opc-client-request-id"`
 }
 
-func (request CreatePreauthenticatedRequestRequest) String() string {
+func (request RenameObjectRequest) String() string {
 	return common.PointerString(request)
 }
 
-// CreatePreauthenticatedRequestResponse wrapper for the CreatePreauthenticatedRequest operation
-type CreatePreauthenticatedRequestResponse struct {
+// RenameObjectResponse wrapper for the RenameObject operation
+type RenameObjectResponse struct {
 
 	// The underlying http response
 	RawResponse *http.Response
-
-	// The PreauthenticatedRequest instance
-	PreauthenticatedRequest `presentIn:"body"`
 
 	// Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
 	OpcClientRequestId *string `presentIn:"header" name:"opc-client-request-id"`
@@ -44,8 +41,14 @@ type CreatePreauthenticatedRequestResponse struct {
 	// Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
 	// request, provide this request ID.
 	OpcRequestId *string `presentIn:"header" name:"opc-request-id"`
+
+	// The entity tag for the object.
+	ETag *string `presentIn:"header" name:"etag"`
+
+	// The time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+	LastModified *common.SDKTime `presentIn:"header" name:"last-modified"`
 }
 
-func (response CreatePreauthenticatedRequestResponse) String() string {
+func (response RenameObjectResponse) String() string {
 	return common.PointerString(response)
 }

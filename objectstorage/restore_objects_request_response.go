@@ -8,8 +8,8 @@ import (
 	"net/http"
 )
 
-// CreatePreauthenticatedRequestRequest wrapper for the CreatePreauthenticatedRequest operation
-type CreatePreauthenticatedRequestRequest struct {
+// RestoreObjectsRequest wrapper for the RestoreObjects operation
+type RestoreObjectsRequest struct {
 
 	// The top-level namespace used for the request.
 	NamespaceName *string `mandatory:"true" contributesTo:"path" name:"namespaceName"`
@@ -18,25 +18,22 @@ type CreatePreauthenticatedRequestRequest struct {
 	// Example: `my-new-bucket1`
 	BucketName *string `mandatory:"true" contributesTo:"path" name:"bucketName"`
 
-	// Information needed to create the pre-authenticated request.
-	CreatePreauthenticatedRequestDetails `contributesTo:"body"`
+	// Request to restore objects.
+	RestoreObjectsDetails `contributesTo:"body"`
 
 	// The client request ID for tracing.
 	OpcClientRequestId *string `mandatory:"false" contributesTo:"header" name:"opc-client-request-id"`
 }
 
-func (request CreatePreauthenticatedRequestRequest) String() string {
+func (request RestoreObjectsRequest) String() string {
 	return common.PointerString(request)
 }
 
-// CreatePreauthenticatedRequestResponse wrapper for the CreatePreauthenticatedRequest operation
-type CreatePreauthenticatedRequestResponse struct {
+// RestoreObjectsResponse wrapper for the RestoreObjects operation
+type RestoreObjectsResponse struct {
 
 	// The underlying http response
 	RawResponse *http.Response
-
-	// The PreauthenticatedRequest instance
-	PreauthenticatedRequest `presentIn:"body"`
 
 	// Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
 	OpcClientRequestId *string `presentIn:"header" name:"opc-client-request-id"`
@@ -46,6 +43,6 @@ type CreatePreauthenticatedRequestResponse struct {
 	OpcRequestId *string `presentIn:"header" name:"opc-request-id"`
 }
 
-func (response CreatePreauthenticatedRequestResponse) String() string {
+func (response RestoreObjectsResponse) String() string {
 	return common.PointerString(response)
 }
