@@ -21,7 +21,7 @@ type ImageSourceViaObjectStorageUriDetails struct {
 
 	// The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
 	// images are supported.
-	SourceImageType ImageSourceDetailsSourceImageTypeEnum `mandatory:"" json:"sourceImageType,omitempty"`
+	SourceImageType ImageSourceDetailsSourceImageTypeEnum `mandatory:"false" json:"sourceImageType,omitempty"`
 }
 
 //GetSourceImageType returns SourceImageType

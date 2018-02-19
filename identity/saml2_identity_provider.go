@@ -75,7 +75,7 @@ type Saml2IdentityProvider struct {
 
 	// The current state. After creating an `IdentityProvider`, make sure its
 	// `lifecycleState` changes from CREATING to ACTIVE before using it.
-	LifecycleState IdentityProviderLifecycleStateEnum `mandatory:"" json:"lifecycleState"`
+	LifecycleState IdentityProviderLifecycleStateEnum `mandatory:"true" json:"lifecycleState"`
 }
 
 //GetId returns Id
