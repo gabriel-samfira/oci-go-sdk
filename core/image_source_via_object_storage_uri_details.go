@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Core Services API
@@ -21,7 +21,7 @@ type ImageSourceViaObjectStorageUriDetails struct {
 
 	// The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
 	// images are supported.
-	SourceImageType ImageSourceDetailsSourceImageTypeEnum `mandatory:"false" json:"sourceImageType,omitempty"`
+	SourceImageType ImageSourceDetailsSourceImageTypeEnum `mandatory:"" json:"sourceImageType,omitempty"`
 }
 
 //GetSourceImageType returns SourceImageType

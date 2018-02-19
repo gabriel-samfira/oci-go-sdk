@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 package dns
@@ -32,11 +32,11 @@ type ListZonesRequest struct {
 	// Will match any zone whose type equals the provided value.
 	ZoneType ListZonesZoneTypeEnum `mandatory:"false" contributesTo:"query" name:"zoneType" omitEmpty:"true"`
 
-	// An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+	// An RFC 3339 (https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
 	// all returned resources were created on or after the indicated time.
 	TimeCreatedGreaterThanOrEqualTo *common.SDKTime `mandatory:"false" contributesTo:"query" name:"timeCreatedGreaterThanOrEqualTo"`
 
-	// An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+	// An RFC 3339 (https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
 	// all returned resources were created before the indicated time.
 	TimeCreatedLessThan *common.SDKTime `mandatory:"false" contributesTo:"query" name:"timeCreatedLessThan"`
 

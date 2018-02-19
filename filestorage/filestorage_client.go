@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // File Storage Service API
@@ -90,9 +90,9 @@ func (client FileStorageClient) CreateExport(ctx context.Context, request Create
 // mount target's IP address. You can associate a file system with
 // more than one mount target at a time.
 // For information about access control and compartments, see
-// [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
-// For information about availability domains, see [Regions and
-// Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
+// Overview of the IAM Service ({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+// For information about availability domains, see Regions and
+// Availability Domains ({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
 // To get a list of availability domains, use the
 // `ListAvailabilityDomains` operation in the Identity and Access
 // Management Service API.
@@ -131,10 +131,10 @@ func (client FileStorageClient) CreateFileSystem(ctx context.Context, request Cr
 // in the privateIpIds property of the mount target and are highly available. Mount
 // targets also consume additional IP addresses in their subnet.
 // For information about access control and compartments, see
-// [Overview of the IAM
-// Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
-// For information about availability domains, see [Regions and
-// Availability Domains]({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
+// Overview of the IAM
+// Service ({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm).
+// For information about availability domains, see Regions and
+// Availability Domains ({{DOC_SERVER_URL}}/Content/General/Concepts/regions.htm).
 // To get a list of availability domains, use the
 // `ListAvailabilityDomains` operation in the Identity and Access
 // Management Service API.

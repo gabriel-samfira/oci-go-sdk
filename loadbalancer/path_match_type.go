@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Load Balancing Service API
@@ -23,7 +23,7 @@ type PathMatchType struct {
 	// *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
 	// *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
 	// For a full description of how the system handles `matchType` in a path route set containing multiple rules, see
-	// [Managing Request Routing]({{DOC_SERVER_URL}}/Content/Balance/Tasks/managingrequest.htm).
+	// Managing Request Routing ({{DOC_SERVER_URL}}/Content/Balance/Tasks/managingrequest.htm).
 	MatchType PathMatchTypeMatchTypeEnum `mandatory:"true" json:"matchType"`
 }
 

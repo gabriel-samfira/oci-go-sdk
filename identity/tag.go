@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Identity and Access Management Service API
@@ -14,7 +14,7 @@ import (
 
 // Tag A tag definition that belongs to a specific tag namespace.  "Defined tags" must be set up in your tenancy before
 // you can apply them to resources.
-// For more information, see [Managing Tags and Tag Namespaces]({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm).
+// For more information, see Managing Tags and Tag Namespaces ({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm).
 type Tag struct {
 
 	// The OCID of the compartment that contains the tag definition.
@@ -36,7 +36,7 @@ type Tag struct {
 	Description *string `mandatory:"true" json:"description"`
 
 	// Indicates whether the tag is retired.
-	// See [Retiring Key Definitions and Namespace Definitions]({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+	// See Retiring Key Definitions and Namespace Definitions ({{DOC_SERVER_URL}}/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 	IsRetired *bool `mandatory:"true" json:"isRetired"`
 
 	// Date and time the tag was created, in the format defined by RFC3339.
@@ -44,12 +44,12 @@ type Tag struct {
 	TimeCreated *common.SDKTime `mandatory:"true" json:"timeCreated"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `mandatory:"false" json:"freeformTags"`
 
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Operations": {"CostCenter": "42"}}``
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 }

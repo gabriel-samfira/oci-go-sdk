@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 package dns
@@ -44,7 +44,7 @@ type GetZoneRecordsRequest struct {
 	DomainContains *string `mandatory:"false" contributesTo:"query" name:"domainContains"`
 
 	// Search by record type.
-	// Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
+	// Will match any record whose type (https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
 	Rtype *string `mandatory:"false" contributesTo:"query" name:"rtype"`
 
 	// The field by which to sort records.

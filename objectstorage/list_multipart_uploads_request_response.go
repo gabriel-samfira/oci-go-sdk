@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 package objectstorage
@@ -50,7 +50,7 @@ type ListMultipartUploadsResponse struct {
 
 	// For pagination of a list of `MultipartUpload`s. If this header appears in the response, then
 	// this is a partial list of multipart uploads. Include this value as the `page` parameter in a subsequent
-	// GET request. For information about pagination, see [List Pagination]({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm).
+	// GET request. For information about pagination, see List Pagination ({{DOC_SERVER_URL}}/Content/API/Concepts/usingapi.htm).
 	OpcNextPage *string `presentIn:"header" name:"opc-next-page"`
 }
 

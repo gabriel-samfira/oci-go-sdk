@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Identity and Access Management Service API
@@ -15,7 +15,7 @@ import (
 
 // Saml2IdentityProvider A special type of IdentityProvider that
 // supports the SAML 2.0 protocol. For more information, see
-// [Identity Providers and Federation]({{DOC_SERVER_URL}}/Content/Identity/Concepts/federation.htm).
+// Identity Providers and Federation ({{DOC_SERVER_URL}}/Content/Identity/Concepts/federation.htm).
 type Saml2IdentityProvider struct {
 
 	// The OCID of the `IdentityProvider`.
@@ -64,18 +64,18 @@ type Saml2IdentityProvider struct {
 	InactiveStatus *int `mandatory:"false" json:"inactiveStatus"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `mandatory:"false" json:"freeformTags"`
 
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 
 	// The current state. After creating an `IdentityProvider`, make sure its
 	// `lifecycleState` changes from CREATING to ACTIVE before using it.
-	LifecycleState IdentityProviderLifecycleStateEnum `mandatory:"true" json:"lifecycleState"`
+	LifecycleState IdentityProviderLifecycleStateEnum `mandatory:"" json:"lifecycleState"`
 }
 
 //GetId returns Id

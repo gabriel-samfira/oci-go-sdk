@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Identity and Access Management Service API
@@ -14,8 +14,8 @@ import (
 
 // Policy A document that specifies the type of access a group has to the resources in a compartment. For information about
 // policies and other IAM Service components, see
-// [Overview of the IAM Service]({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). If you're new to policies, see
-// [Getting Started with Policies]({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
+// Overview of the IAM Service ({{DOC_SERVER_URL}}/Content/Identity/Concepts/overview.htm). If you're new to policies, see
+// Getting Started with Policies ({{DOC_SERVER_URL}}/Content/Identity/Concepts/policygetstarted.htm).
 // The word "policy" is used by people in different ways:
 //   * An individual statement written in the policy language
 //   * A collection of statements in a single, named "policy" document (which has an Oracle Cloud ID (OCID) assigned to it)
@@ -57,12 +57,12 @@ type Policy struct {
 	VersionDate *common.SDKTime `mandatory:"false" json:"versionDate"`
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `mandatory:"false" json:"freeformTags"`
 
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 }

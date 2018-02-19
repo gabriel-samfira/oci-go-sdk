@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Load Balancing Service API
@@ -35,7 +35,7 @@ type ConnectionConfiguration struct {
 	// *  The backend server starts transmitting data after establishing a WebSocket connection, but the client does
 	//    not transmit data for more than 60 seconds.
 	// The maximum value is 7200 seconds. Contact My Oracle Support to file a service request if you want to increase
-	// this limit for your tenancy. For more information, see [Service Limits]({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
+	// this limit for your tenancy. For more information, see Service Limits ({{DOC_SERVER_URL}}/Content/General/Concepts/servicelimits.htm).
 	// Example: `1200`
 	IdleTimeout *int `mandatory:"true" json:"idleTimeout"`
 }

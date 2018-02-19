@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 package loadbalancer
@@ -14,7 +14,7 @@ type UpdatePathRouteSetRequest struct {
 	// The configuration details to update a path route set.
 	UpdatePathRouteSetDetails `contributesTo:"body"`
 
-	// The [OCID]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to update.
+	// The OCID ({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to update.
 	LoadBalancerId *string `mandatory:"true" contributesTo:"path" name:"loadBalancerId"`
 
 	// The name of the path route set to update.
@@ -47,7 +47,7 @@ type UpdatePathRouteSetResponse struct {
 	// a particular request, please provide the request ID.
 	OpcRequestId *string `presentIn:"header" name:"opc-request-id"`
 
-	// The [OCID]({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm) of the work request.
+	// The OCID ({{DOC_SERVER_URL}}/Content/General/Concepts/identifiers.htm) of the work request.
 	OpcWorkRequestId *string `presentIn:"header" name:"opc-work-request-id"`
 }
 

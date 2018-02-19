@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Public DNS Service
@@ -193,7 +193,7 @@ func (client DnsClient) GetZone(ctx context.Context, request GetZoneRequest) (re
 
 // GetZoneRecords Gets all records in the specified zone. The results are
 // sorted by `domain` in alphabetical order by default. For more
-// information about records, please see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+// information about records, please see Resource Record (RR) TYPEs (https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 func (client DnsClient) GetZoneRecords(ctx context.Context, request GetZoneRecordsRequest) (response GetZoneRecordsResponse, err error) {
 	httpRequest, err := common.MakeDefaultHTTPRequestWithTaggedStruct(http.MethodGet, "/zones/{zoneNameOrId}/records", request)
 	if err != nil {
@@ -330,7 +330,7 @@ func (client DnsClient) UpdateRRSet(ctx context.Context, request UpdateRRSetRequ
 
 // UpdateZone Updates the specified secondary zone with your new external master
 // server information. For more information about secondary zone, see
-// [Manage DNS Service Zone](https://docs.us-phoenix-1.oraclecloud.com/Content/DNS/Tasks/managingdnszones.htm).
+// Manage DNS Service Zone (https://docs.us-phoenix-1.oraclecloud.com/Content/DNS/Tasks/managingdnszones.htm).
 func (client DnsClient) UpdateZone(ctx context.Context, request UpdateZoneRequest) (response UpdateZoneResponse, err error) {
 	httpRequest, err := common.MakeDefaultHTTPRequestWithTaggedStruct(http.MethodPut, "/zones/{zoneNameOrId}", request)
 	if err != nil {

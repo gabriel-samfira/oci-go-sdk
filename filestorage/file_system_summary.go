@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // File Storage Service API
@@ -22,7 +22,7 @@ type FileSystemSummary struct {
 	// any snapshots. This number reflects the metered size of the file
 	// system and is updated asynchronously with respect to
 	// updates to the file system. For details on file system
-	// metering see [File System Metering]({{DOC_SERVER_URL}}/Content/File/Concepts/metering.htm).
+	// metering see File System Metering ({{DOC_SERVER_URL}}/Content/File/Concepts/metering.htm).
 	MeteredBytes *int `mandatory:"true" json:"meteredBytes"`
 
 	// The OCID of the compartment that contains the file system.
@@ -40,7 +40,7 @@ type FileSystemSummary struct {
 	LifecycleState FileSystemSummaryLifecycleStateEnum `mandatory:"true" json:"lifecycleState"`
 
 	// The date and time the file system was created, expressed
-	// in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	// in RFC 3339 (https://tools.ietf.org/rfc/rfc3339) timestamp format.
 	// Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *common.SDKTime `mandatory:"true" json:"timeCreated"`
 

@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // File Storage Service API
@@ -38,10 +38,10 @@ type CreateMountTargetDetails struct {
 	// address's fully qualified domain name (FQDN). For example,
 	// `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`.
 	// Must be unique across all VNICs in the subnet and comply
-	// with [RFC 952](https://tools.ietf.org/html/rfc952)
-	// and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+	// with RFC 952 (https://tools.ietf.org/html/rfc952)
+	// and RFC 1123 (https://tools.ietf.org/html/rfc1123).
 	// For more information, see
-	// [DNS in Your Virtual Cloud Network]({{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm).
+	// DNS in Your Virtual Cloud Network ({{DOC_SERVER_URL}}/Content/Network/Concepts/dns.htm).
 	// Example: `files-1`
 	HostnameLabel *string `mandatory:"false" json:"hostnameLabel"`
 

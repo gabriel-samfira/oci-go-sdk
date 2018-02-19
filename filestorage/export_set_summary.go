@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // File Storage Service API
@@ -33,7 +33,7 @@ type ExportSetSummary struct {
 	LifecycleState ExportSetSummaryLifecycleStateEnum `mandatory:"true" json:"lifecycleState"`
 
 	// The date and time the export set was created, expressed
-	// in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	// in RFC 3339 (https://tools.ietf.org/rfc/rfc3339) timestamp format.
 	// Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *common.SDKTime `mandatory:"true" json:"timeCreated"`
 

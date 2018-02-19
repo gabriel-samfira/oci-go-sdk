@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Core Services API
@@ -21,7 +21,7 @@ type CreatePublicIpDetails struct {
 
 	// Defines when the public IP is deleted and released back to the Oracle Cloud
 	// Infrastructure public IP pool. For more information, see
-	// [Public IP Addresses]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingpublicIPs.htm).
+	// Public IP Addresses ({{DOC_SERVER_URL}}/Content/Network/Tasks/managingpublicIPs.htm).
 	Lifetime CreatePublicIpDetailsLifetimeEnum `mandatory:"true" json:"lifetime"`
 
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid

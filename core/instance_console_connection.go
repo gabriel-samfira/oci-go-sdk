@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Core Services API
@@ -15,7 +15,7 @@ import (
 // InstanceConsoleConnection The `InstanceConsoleConnection` API provides you with console access to virtual machine (VM) instances,
 // enabling you to troubleshoot malfunctioning instances remotely.
 // For more information about console access, see
-// [Accessing the Console]({{DOC_SERVER_URL}}/Content/Compute/References/serialconsole.htm).
+// Accessing the Console ({{DOC_SERVER_URL}}/Content/Compute/References/serialconsole.htm).
 type InstanceConsoleConnection struct {
 
 	// The OCID of the compartment to contain the console connection.
@@ -25,7 +25,7 @@ type InstanceConsoleConnection struct {
 	ConnectionString *string `mandatory:"false" json:"connectionString"`
 
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	// For more information, see [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// For more information, see Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags map[string]map[string]interface{} `mandatory:"false" json:"definedTags"`
 
@@ -34,7 +34,7 @@ type InstanceConsoleConnection struct {
 
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no
 	// predefined name, type, or namespace. For more information, see
-	// [Resource Tags]({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
+	// Resource Tags ({{DOC_SERVER_URL}}/Content/General/Concepts/resourcetags.htm).
 	// Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `mandatory:"false" json:"freeformTags"`
 

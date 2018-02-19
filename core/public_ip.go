@@ -1,4 +1,4 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 // Code generated. DO NOT EDIT.
 
 // Core Services API
@@ -18,7 +18,7 @@ import (
 // 1. Ephemeral
 // 2. Reserved
 // For more information and comparison of the two types,
-// see [Public IP Addresses]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingpublicIPs.htm).
+// see Public IP Addresses ({{DOC_SERVER_URL}}/Content/Network/Tasks/managingpublicIPs.htm).
 type PublicIp struct {
 
 	// The public IP's Availability Domain. This property is set only for ephemeral public IPs
@@ -54,7 +54,7 @@ type PublicIp struct {
 	// * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP
 	// whenever you like. It does not need to be assigned to a private IP at all times.
 	// For more information and comparison of the two types,
-	// see [Public IP Addresses]({{DOC_SERVER_URL}}/Content/Network/Tasks/managingpublicIPs.htm).
+	// see Public IP Addresses ({{DOC_SERVER_URL}}/Content/Network/Tasks/managingpublicIPs.htm).
 	Lifetime PublicIpLifetimeEnum `mandatory:"false" json:"lifetime,omitempty"`
 
 	// The OCID of the private IP that the public IP is currently assigned to, or in the
