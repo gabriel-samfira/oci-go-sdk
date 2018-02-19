@@ -3,8 +3,9 @@
 
 // Identity and Access Management Service API
 //
-/* APIs for managing users, groups, compartments, and policies.
- */
+//
+// APIs for managing users, groups, compartments, and policies.
+//
 
 package identity
 

@@ -3,8 +3,9 @@
 
 // Public DNS Service
 //
-/* API for managing DNS zones, records, and policies.
- */
+//
+// API for managing DNS zones, records, and policies.
+//
 
 package dns
 
