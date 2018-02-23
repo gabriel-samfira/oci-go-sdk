@@ -38,6 +38,8 @@ const (
 	volumeDisplayName            = "GOSDK2_Test_Deps_Volume"
 	testUserDisplayName          = "GOSDK2_Test_Deps_TestUser"
 	testGroupDisplayName         = "GOSDK2_Test_Deps_TestGroup"
+	tagDisplayName               = "GOSDK2_Test_Deps_Tag"
+	tagNamespaceDisplayName      = "GOSDK2_Test_Deps_TagNamespcae"
 )
 
 // a helper method to either create a new vcn or get the one already exist
@@ -1011,4 +1013,66 @@ func createTestGroup(t *testing.T, name *string) identity.Group {
 	rsp, err := c.CreateGroup(context.Background(), req)
 	failIfError(t, err)
 	return rsp.Group
+}
+
+func createOrGetTag(t *testing.T) map[string]string {
+	c, clerr := identity.NewIdentityClientWithConfigurationProvider(common.DefaultConfigProvider())
+	failIfError(t, clerr)
+
+	tagNamespaceID := createOrGetTagNamespace(t)
+
+	listReq := identity.ListTagsRequest{
+		TagNamespaceId: tagNamespaceID,
+	}
+
+	listResp, err := c.ListTags(context.Background(), listReq)
+	failIfError(t, err)
+
+	for _, element := range listResp.Items {
+		if *element.Name == tagDisplayName {
+			return element.FreeformTags
+		}
+	}
+
+	req := identity.CreateTagRequest{
+		TagNamespaceId: tagNamespaceID,
+	}
+
+	req.Name = common.String(tagDisplayName)
+	req.Description = common.String("GOSDK Test Tag")
+	req.FreeformTags = map[string]string{"GOSDKTagKey": "GOSDKTagValue"}
+
+	resp, err := c.CreateTag(context.Background(), req)
+	failIfError(t, err)
+
+	return resp.FreeformTags
+}
+
+func createOrGetTagNamespace(t *testing.T) *string {
+	c, clerr := identity.NewIdentityClientWithConfigurationProvider(common.DefaultConfigProvider())
+	failIfError(t, clerr)
+	listReq := identity.ListTagNamespacesRequest{
+		CompartmentId: common.String(getTenancyID()),
+		Limit:         common.Int(500),
+	}
+
+	listResp, err := c.ListTagNamespaces(context.Background(), listReq)
+	failIfError(t, err)
+
+	for _, element := range listResp.Items {
+		if *element.Name == tagNamespaceDisplayName {
+			return element.Id
+		}
+	}
+
+	req := identity.CreateTagNamespaceRequest{}
+	req.CompartmentId = common.String(getTenancyID())
+	req.Name = common.String(tagNamespaceDisplayName)
+	req.Description = common.String("GSDK Test Tag Namespace")
+
+	resp, err := c.CreateTagNamespace(context.Background(), req)
+	failIfError(t, err)
+	assert.NotEmpty(t, resp)
+
+	return resp.Id
 }
