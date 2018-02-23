@@ -84,7 +84,7 @@ type HeadObjectResponse struct {
 	LastModified *common.SDKTime `presentIn:"header" name:"last-modified"`
 
 	// The current state of the object.
-	ArchivalState *string `presentIn:"header" name:"archival-state"`
+	ArchivalState HeadObjectArchivalStateEnum `presentIn:"header" name:"archival-state"`
 
 	// Time that the object is returned to the archived state. This field is only present for restored objects.
 	TimeOfArchival *common.SDKTime `presentIn:"header" name:"time-of-archival"`
@@ -98,4 +98,35 @@ type HeadObjectResponse struct {
 
 func (response HeadObjectResponse) String() string {
 	return common.PointerString(response)
+}
+
+// HeadObjectArchivalStateEnum Enum with underlying type: string
+type HeadObjectArchivalStateEnum string
+
+// Set of constants representing the allowable values for HeadObjectArchivalState
+const (
+	HeadObjectArchivalStateAvailable HeadObjectArchivalStateEnum = "AVAILABLE"
+	HeadObjectArchivalStateArchived  HeadObjectArchivalStateEnum = "ARCHIVED"
+	HeadObjectArchivalStateRestoring HeadObjectArchivalStateEnum = "RESTORING"
+	HeadObjectArchivalStateRestored  HeadObjectArchivalStateEnum = "RESTORED"
+	HeadObjectArchivalStateUnknown   HeadObjectArchivalStateEnum = "UNKNOWN"
+)
+
+var mappingHeadObjectArchivalState = map[string]HeadObjectArchivalStateEnum{
+	"AVAILABLE": HeadObjectArchivalStateAvailable,
+	"ARCHIVED":  HeadObjectArchivalStateArchived,
+	"RESTORING": HeadObjectArchivalStateRestoring,
+	"RESTORED":  HeadObjectArchivalStateRestored,
+	"UNKNOWN":   HeadObjectArchivalStateUnknown,
+}
+
+// GetHeadObjectArchivalStateEnumValues Enumerates the set of values for HeadObjectArchivalState
+func GetHeadObjectArchivalStateEnumValues() []HeadObjectArchivalStateEnum {
+	values := make([]HeadObjectArchivalStateEnum, 0)
+	for _, v := range mappingHeadObjectArchivalState {
+		if v != HeadObjectArchivalStateUnknown {
+			values = append(values, v)
+		}
+	}
+	return values
 }
