@@ -1,9 +1,8 @@
-// Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
-
-// Identity and Access Management Service API
+// Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
 //
-// APIs for managing users, groups, compartments, and policies.
+// File Storage Service API Tests
 //
+// The API for the File Storage Service.
 
 package integtest
 
@@ -19,7 +18,7 @@ import (
 )
 
 // sanity test for file storage service as the current plan is rely on Java test for other APIs
-func TestIdentityClient_ListFileSystems(t *testing.T) {
+func TestFileStorageClient_ListFileSystems(t *testing.T) {
 	c, clerr := filestorage.NewFileStorageClientWithConfigurationProvider(common.DefaultConfigProvider())
 	failIfError(t, clerr)
 
