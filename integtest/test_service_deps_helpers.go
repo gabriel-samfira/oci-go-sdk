@@ -1015,7 +1015,7 @@ func createTestGroup(t *testing.T, name *string) identity.Group {
 	return rsp.Group
 }
 
-func createOrGetTag(t *testing.T) map[string]string {
+func createOrGetFreeformTags(t *testing.T) map[string]string {
 	c, clerr := identity.NewIdentityClientWithConfigurationProvider(common.DefaultConfigProvider())
 	failIfError(t, clerr)
 
