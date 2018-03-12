@@ -50,6 +50,9 @@ type SecurityList struct {
 
 	// The OCID of the VCN the security list belongs to.
 	VcnId *string `mandatory:"true" json:"vcnId"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m SecurityList) String() string {

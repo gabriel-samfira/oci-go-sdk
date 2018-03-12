@@ -43,6 +43,9 @@ type CreateVolumeDetails struct {
 	// This field is deprecated. Use the sourceDetails field instead to specify the
 	// backup for the volume.
 	VolumeBackupId *string `mandatory:"false" json:"volumeBackupId"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m CreateVolumeDetails) String() string {
@@ -59,6 +62,7 @@ func (m *CreateVolumeDetails) UnmarshalJSON(data []byte) (e error) {
 		VolumeBackupId     *string             `json:"volumeBackupId"`
 		AvailabilityDomain *string             `json:"availabilityDomain"`
 		CompartmentId      *string             `json:"compartmentId"`
+		FreeFormTags       map[string]string   `json:"freeformTags"`
 	}{}
 
 	e = json.Unmarshal(data, &model)
@@ -76,5 +80,6 @@ func (m *CreateVolumeDetails) UnmarshalJSON(data []byte) (e error) {
 	m.VolumeBackupId = model.VolumeBackupId
 	m.AvailabilityDomain = model.AvailabilityDomain
 	m.CompartmentId = model.CompartmentId
+	m.FreeFormTags = model.FreeFormTags
 	return
 }

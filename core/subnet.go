@@ -97,6 +97,9 @@ type Subnet struct {
 	// The date and time the subnet was created, in the format defined by RFC3339.
 	// Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *common.SDKTime `mandatory:"false" json:"timeCreated"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m Subnet) String() string {

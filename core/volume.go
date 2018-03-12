@@ -53,6 +53,9 @@ type Volume struct {
 	// The volume source, either an existing volume in the same Availability Domain or a volume backup.
 	// If null, an empty volume is created.
 	SourceDetails VolumeSourceDetails `mandatory:"false" json:"sourceDetails"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m Volume) String() string {
@@ -72,6 +75,7 @@ func (m *Volume) UnmarshalJSON(data []byte) (e error) {
 		LifecycleState     VolumeLifecycleStateEnum `json:"lifecycleState"`
 		SizeInMBs          *int                     `json:"sizeInMBs"`
 		TimeCreated        *common.SDKTime          `json:"timeCreated"`
+		FreeFormTags       map[string]string        `json:"freeformTags"`
 	}{}
 
 	e = json.Unmarshal(data, &model)
@@ -92,6 +96,7 @@ func (m *Volume) UnmarshalJSON(data []byte) (e error) {
 	m.LifecycleState = model.LifecycleState
 	m.SizeInMBs = model.SizeInMBs
 	m.TimeCreated = model.TimeCreated
+	m.FreeFormTags = model.FreeFormTags
 	return
 }
 

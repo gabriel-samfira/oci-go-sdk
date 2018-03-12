@@ -38,6 +38,9 @@ type CreateVcnDetails struct {
 	// DNS in Your Virtual Cloud Network (https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
 	// Example: `vcn1`
 	DnsLabel *string `mandatory:"false" json:"dnsLabel"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m CreateVcnDetails) String() string {

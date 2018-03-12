@@ -69,6 +69,9 @@ type CreateSubnetDetails struct {
 	// the subnet. Remember that security lists are associated at the subnet
 	// level, but the rules are applied to the individual VNICs in the subnet.
 	SecurityListIds []string `mandatory:"false" json:"securityListIds"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m CreateSubnetDetails) String() string {

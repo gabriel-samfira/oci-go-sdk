@@ -86,6 +86,9 @@ type Instance struct {
 
 	// Details for creating an instance
 	SourceDetails InstanceSourceDetails `mandatory:"false" json:"sourceDetails"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m Instance) String() string {
@@ -108,6 +111,7 @@ func (m *Instance) UnmarshalJSON(data []byte) (e error) {
 		Region             *string                    `json:"region"`
 		Shape              *string                    `json:"shape"`
 		TimeCreated        *common.SDKTime            `json:"timeCreated"`
+		FreeFormTags       map[string]string          `json:"freeformTags"`
 	}{}
 
 	e = json.Unmarshal(data, &model)
@@ -131,6 +135,7 @@ func (m *Instance) UnmarshalJSON(data []byte) (e error) {
 	m.Region = model.Region
 	m.Shape = model.Shape
 	m.TimeCreated = model.TimeCreated
+	m.FreeFormTags = model.FreeFormTags
 	return
 }
 

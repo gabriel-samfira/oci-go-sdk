@@ -125,6 +125,9 @@ type LaunchInstanceDetails struct {
 	// CreateVnicDetails.
 	// At least one of them is required; if you provide both, the values must match.
 	SubnetId *string `mandatory:"false" json:"subnetId"`
+
+	// Free form tags applied to this resource
+	FreeFormTags map[string]string `mandatory:"false" json:"freeformTags,omitempty"`
 }
 
 func (m LaunchInstanceDetails) String() string {
@@ -146,6 +149,7 @@ func (m *LaunchInstanceDetails) UnmarshalJSON(data []byte) (e error) {
 		AvailabilityDomain *string                `json:"availabilityDomain"`
 		CompartmentId      *string                `json:"compartmentId"`
 		Shape              *string                `json:"shape"`
+		FreeFormTags       map[string]string      `json:"freeformTags"`
 	}{}
 
 	e = json.Unmarshal(data, &model)
@@ -168,5 +172,6 @@ func (m *LaunchInstanceDetails) UnmarshalJSON(data []byte) (e error) {
 	m.AvailabilityDomain = model.AvailabilityDomain
 	m.CompartmentId = model.CompartmentId
 	m.Shape = model.Shape
+	m.FreeFormTags = model.FreeFormTags
 	return
 }
